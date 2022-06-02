@@ -1,0 +1,7 @@
+{
+  "name": "collabApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
