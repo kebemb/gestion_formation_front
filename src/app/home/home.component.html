@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="secondary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+        <ion-text color="light">
+          <ion-text color="light" class="fw700">Accueil</ion-text>
+        </ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid no-margin class="no-radius">
+    <ion-row>
+      <ion-col size="6">
+        <!-- simple card with icon and text -->
+        <ion-card color="secondary" (click)="departements()">
+          <ion-icon name="list" vertical="center"></ion-icon>
+          <ion-text style="text-align: center">
+            <h2>Département <br/> ({{nbdepartement}})</h2>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <!-- simple card with icon and text -->
+        <ion-card color="danger">
+          <ion-icon name="people"></ion-icon>
+          <ion-text style="text-align: center">
+            <h2>Employés <br/> (0)</h2>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <!-- simple card with icon and text -->
+        <ion-card color="success">
+          <ion-icon name="school"></ion-icon>
+          <ion-text style="text-align: center">
+            <h2>Formation <br/> (0)</h2>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer color="dark">
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Designed by Mbayang KEBE</ion-title>
+  </ion-toolbar>
+</ion-footer>
+  
