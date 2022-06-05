@@ -1,0 +1,51 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Création</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card no-margin class="no-radius">
+    <ion-item lines="none" color="medium">
+      <ion-label>
+        <h2 no-margin class="fw500 no-margin">
+          <ion-text color="dark"> Création d'une formation</ion-text>
+        </h2>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <div class="bg-white">
+    <form  padding-right>
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Nom de la Formation</ion-label>
+        <ion-input type="text" id="libelle" required [(ngModel)]="formation.libelle" name="libelle"></ion-input>
+      </ion-item>
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Date</ion-label>
+        <ion-input type="date" id="date" required [(ngModel)]="formation.date" name="date"></ion-input>
+      </ion-item> 
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Durée</ion-label>
+        <ion-input type="number" id="duree" required [(ngModel)]="formation.duree" name="duree"></ion-input>
+      </ion-item> 
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Les employés</ion-label>
+        <ion-select name="employee" [(ngModel)]="formation.employee" multiple>
+          <ion-select-option *ngFor="let employe of employes|async" [value]="employe.id">{{employe.nom}} {{employe.prenom}}</ion-select-option>
+        </ion-select>
+      </ion-item>  
+      <ion-button (click)="onSave()" icon-left size="medium" expand="full" shape="round" color="dark">Ajouter</ion-button>
+    </form>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Designed by Mbayang KEBE</ion-title>
+  </ion-toolbar>
+</ion-footer>

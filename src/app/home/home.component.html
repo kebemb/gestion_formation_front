@@ -25,19 +25,19 @@
       </ion-col>
       <ion-col size="6">
         <!-- simple card with icon and text -->
-        <ion-card color="danger">
+        <ion-card color="danger" (click)="employes()">
           <ion-icon name="people"></ion-icon>
           <ion-text style="text-align: center">
-            <h2>Employés <br/> (0)</h2>
+            <h2>Employés <br/> ({{nbemployes}})</h2>
           </ion-text>
         </ion-card>
       </ion-col>
       <ion-col size="6">
         <!-- simple card with icon and text -->
-        <ion-card color="success">
+        <ion-card color="success" (click)="formations()">
           <ion-icon name="school"></ion-icon>
           <ion-text style="text-align: center">
-            <h2>Formation <br/> (0)</h2>
+            <h2>Formation <br/> ({{nbformations}})</h2>
           </ion-text>
         </ion-card>
       </ion-col>

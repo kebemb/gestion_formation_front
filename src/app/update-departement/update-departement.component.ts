@@ -49,7 +49,6 @@ export class UpdateDepartementComponent implements OnInit {
           });
     
           toast.present();
-          this.navCtrl.navigateForward('/departement');
         });
   }
   onSubmit(){

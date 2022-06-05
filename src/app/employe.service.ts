@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { Departement } from './departement';
+import { Employe } from './employe';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
+export class EmployeService {
 
-export class DepartementService {
-  private baseUrl = 'http://localhost:8080/api/departements';
+  private baseUrl = 'http://localhost:8080/api/employees';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
-  constructor(private httpClient: HttpClient ) { }
 
+  constructor(private httpClient: HttpClient) { }
   getAll(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.baseUrl+ '/')
     .pipe(
@@ -24,8 +24,8 @@ export class DepartementService {
     );
   } 
 
-  create(departement: Departement): Observable<any> {
-    return this.httpClient.post(this.baseUrl+'/create', JSON.stringify(departement), this.httpOptions)
+  create(employe : Employe): Observable<any> {
+    return this.httpClient.post(this.baseUrl+'/create', JSON.stringify(employe), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     );
@@ -38,8 +38,8 @@ export class DepartementService {
     );
   }
 
-  update(id: string, departement: Departement): Observable<any> {
-    return this.httpClient.put(this.baseUrl+'/update/'+id, JSON.stringify(departement), this.httpOptions)
+  update(id: string, employe: Employe): Observable<any> {
+    return this.httpClient.put(this.baseUrl+'/update/'+id, JSON.stringify(employe), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     );
@@ -61,5 +61,4 @@ export class DepartementService {
     }
     return throwError(errorMessage);
  }
-
-}
+} 

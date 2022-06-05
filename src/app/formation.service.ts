@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Formation } from './formation';
 import { Observable, throwError } from 'rxjs';
-import { Departement } from './departement';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
+export class FormationService {
 
-export class DepartementService {
-  private baseUrl = 'http://localhost:8080/api/departements';
+  private baseUrl = 'http://localhost:8080/api/formation';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
-  constructor(private httpClient: HttpClient ) { }
+  constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.baseUrl+ '/')
@@ -24,8 +24,8 @@ export class DepartementService {
     );
   } 
 
-  create(departement: Departement): Observable<any> {
-    return this.httpClient.post(this.baseUrl+'/create', JSON.stringify(departement), this.httpOptions)
+  create(formation: Formation): Observable<any> {
+    return this.httpClient.post(this.baseUrl+'/create', JSON.stringify(formation), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     );
@@ -38,8 +38,8 @@ export class DepartementService {
     );
   }
 
-  update(id: string, departement: Departement): Observable<any> {
-    return this.httpClient.put(this.baseUrl+'/update/'+id, JSON.stringify(departement), this.httpOptions)
+  update(id: string, formation:Formation): Observable<any> {
+    return this.httpClient.put(this.baseUrl+'/update/'+id, JSON.stringify(formation), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     );
@@ -51,7 +51,7 @@ export class DepartementService {
       catchError(this.errorHandler)
     );
   }
-  
+
   errorHandler(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
@@ -61,5 +61,4 @@ export class DepartementService {
     }
     return throwError(errorMessage);
  }
-
 }

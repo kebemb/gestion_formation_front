@@ -23,12 +23,8 @@ export class CreateDepartementComponent implements OnInit {
   ) { }
   ngOnInit() {
   }
-  newEmployee(): void {
-    this.submitted = false;
-    this.departement = new Departement();
-  }
+  
   async onSave(){
-    console.log(this.departement)
     this.departementService.create(this.departement)
         .subscribe(data =>console.log(data),
           error =>console.log(error));
@@ -45,12 +41,14 @@ export class CreateDepartementComponent implements OnInit {
             });
       
             toast.present();
-            this.router.navigateByUrl('/departement')
           });
   }
 
 
   onSubmit() {
     this.onSave();    
+  }
+  goList(){
+    return this.router.navigateByUrl('/departement');
   }
 }

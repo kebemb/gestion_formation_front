@@ -20,15 +20,9 @@ export class AppComponent {
     this.appPages = [
       {
         title: 'Home',
-        url: '/home-results',
+        url: '',
         direct: 'root',
         icon: 'home'
-      },
-      {
-        title: 'About',
-        url: '/about',
-        direct: 'forward',
-        icon: 'information-circle-outline'
       },
       {
         title: 'Département',
@@ -38,9 +32,9 @@ export class AppComponent {
       },
       {
         title: 'Employés',
-        url: '/employee',
+        url: '/employe',
         direct: 'forward',
-        icon: 'contacts'
+        icon: 'school'
       },
       {
         title: 'Formation',

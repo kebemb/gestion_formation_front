@@ -14,6 +14,15 @@ import { CreateDepartementComponent } from './create-departement/create-departem
 import { UpdateDepartementComponent } from './update-departement/update-departement.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { EmployeComponent } from './employe/employe.component';
+import { CreateEmployeComponent } from './create-employe/create-employe.component';
+import { UpdateEmployeComponent } from './update-employe/update-employe.component';
+import { DetailsEmployeComponent } from './details-employe/details-employe.component';
+import { CreateFormationComponent } from './create-formation/create-formation.component';
+import { UpdateFormationComponent } from './update-formation/update-formation.component';
+import { FormationComponent } from './formation/formation.component';
+import { DetailsFormationComponent } from './details-formation/details-formation.component';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +31,14 @@ import { HomeComponent } from './home/home.component';
     CreateDepartementComponent, 
     UpdateDepartementComponent,
     HomeComponent,
+    EmployeComponent,
+    CreateEmployeComponent,
+    UpdateEmployeComponent,
+    DetailsEmployeComponent,
+    FormationComponent,
+    CreateFormationComponent,
+    UpdateFormationComponent,
+    DetailsFormationComponent
   ],
   entryComponents: [],
   imports: [

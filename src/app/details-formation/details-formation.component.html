@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-border>
+    <ion-card no-margin class="no-radius">
+      <ion-item lines="none" color="medium">
+        <ion-label>
+          <h2 no-margin class="fw500 no-margin">
+            <ion-text color="dark"> Détails de la formation</ion-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item class="label" no-line> Nom de la formation : {{formation.libelle}}</ion-item>
+          <ion-item class="label" no-line>Date de la formation : {{formation.date}}</ion-item>
+          <ion-item class="label" no-line>Duree : {{formation.duree}} heures</ion-item>
+          <strong>Les employés inscrits dans cette formation : </strong>
+          <div *ngFor="let employee of formation.employee ">
+            <ion-label *ngFor="let emp of employes| async">
+              <ion-item class="label" *ngIf="employee == emp.id" > 
+                
+                {{emp.prenom}} {{emp.nom}} 
+              </ion-item>
+            </ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>

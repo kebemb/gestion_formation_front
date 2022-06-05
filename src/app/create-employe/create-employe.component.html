@@ -1,0 +1,67 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Création</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card no-margin class="no-radius">
+    <ion-item lines="none" color="medium">
+      <ion-label>
+        <h2 no-margin class="fw500 no-margin">
+          <ion-text color="dark"> Création d'un nouveau employé</ion-text>
+        </h2>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <div class="bg-white">
+    <form  padding-right>
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Nom</ion-label>
+        <ion-input type="text" id="nom" required [(ngModel)]="employe.nom" name="nom"></ion-input>
+      </ion-item> 
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Prénom</ion-label>
+        <ion-input type="text" id="prenom" required [(ngModel)]="employe.prenom" name="prenom"></ion-input>
+      </ion-item>
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Sexe</ion-label>
+        <ion-input type="text" id="sexe" required [(ngModel)]="employe.sexe" name="sexe"></ion-input>
+      </ion-item> 
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Fonction</ion-label>
+        <ion-input type="text" id="fonction" required [(ngModel)]="employe.fonction" name="fonction"></ion-input>
+      </ion-item>
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Adresse</ion-label>
+        <ion-input type="text" id="adresse" required [(ngModel)]="employe.adresse" name="adresse"></ion-input>
+      </ion-item>
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Téléphone</ion-label>
+        <ion-input type="number" id="tel" required [(ngModel)]="employe.tel" name="tel"></ion-input>
+      </ion-item> 
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Email</ion-label>
+        <ion-input type="email" id="email" required [(ngModel)]="employe.email" name="email"></ion-input>
+      </ion-item> 
+      <ion-item line="none" class="animated fadeInUp">
+        <ion-label for="name" position="floating">Département</ion-label>
+        <ion-select name="departement" [(ngModel)]="employe.departement">
+          <ion-select-option *ngFor="let departement of departements |async" [value]="departement.id">{{departement.nom}}</ion-select-option>
+        </ion-select>
+      </ion-item>  
+      <ion-button (click)="onSave()" icon-left size="medium" expand="full" shape="round" color="dark">Ajouter</ion-button>
+    </form>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Designed by Mbayang KEBE</ion-title>
+  </ion-toolbar>
+</ion-footer>
